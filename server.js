@@ -1,6 +1,7 @@
 'use strict';
 require('dotenv').config();
 const express = require('express');
+const path= require('path');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
@@ -95,6 +96,7 @@ function closeServer() {
 }
 
 if (require.main === module) {
+  console.log(DATABASE_URL)
   runServer(DATABASE_URL).catch(err => console.error(err));
 }
 
